@@ -1,9 +1,9 @@
 {
-  "name": "auto-dragalia-slsy",
-  "version": "0.1.5",
+  "name": "dragalia-dbm",
+  "version": "0.0.1",
   "private": true,
   "main": "src/main.ts",
-  "repository": "https://github.com/NyxSLY/auto-dragalia.git",
+  "repository": "https://github.com/NyxSLY/dragalia-dbm.git",
   "author": " <slykuaias@gmail.com>",
   "license": "MIT",
   "scripts": {

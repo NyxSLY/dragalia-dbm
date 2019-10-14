@@ -1,5 +1,5 @@
 {
-  "name": "auto-dragalia",
+  "name": "dragalia-dbm",
   "$schema": "./node_modules/autojs-dev/template/schema.json",
   "project": {
     "name": ""
