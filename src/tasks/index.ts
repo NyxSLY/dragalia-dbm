@@ -1,13 +1,13 @@
-import { autoCombat } from '@/tasks/autoCombat';
-import { farmRareItem } from '@/tasks/farmRareItem';
-import { feedDragon } from '@/tasks/feedDragon';
-import { feedFourLeafClover } from '@/tasks/feedFourLeafClover';
-import { repeatInfinitePool } from '@/tasks/repeatInfinitePool';
-import { repeatInfinitePoolGuild } from '@/tasks/repeatInfinitePoolGuild';
-import { repeatRaid } from '@/tasks/repeatRaid';
-import { repeatRaidTeamm } from '@/tasks/repeatRaidTeamm';
-import { repeatRaidTeamSimple } from '@/tasks/repeatRaidTeamSimple';
-// import { test } from '@/tasks/test';
+import { autoCombat } from "@/tasks/autoCombat";
+import { farmRareItem } from "@/tasks/farmRareItem";
+import { feedDragon } from "@/tasks/feedDragon";
+import { feedFourLeafClover } from "@/tasks/feedFourLeafClover";
+import { repeatInfinitePool } from "@/tasks/repeatInfinitePool";
+import { repeatInfinitePoolGuild } from "@/tasks/repeatInfinitePoolGuild";
+import { repeatRaid } from "@/tasks/repeatRaid";
+import { repeatRaidTeamm } from "@/tasks/repeatRaidTeamm";
+import { repeatRaidTeamSimple } from "@/tasks/repeatRaidTeamSimple";
+import { test } from "@/tasks/test";
 
 export const taskRegistry: Record<
   string,
@@ -22,5 +22,5 @@ export function setupTaskRegistry(): void {
   taskRegistry.无限池自动战斗 = autoCombat;
   taskRegistry.无限池公会版 = repeatInfinitePoolGuild;
   taskRegistry.刷稀有 = farmRareItem;
-  // taskRegistry.text = test;
+  taskRegistry.text = test;
 }
