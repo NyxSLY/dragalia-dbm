@@ -27,5 +27,5 @@ export async function runTaskForever(): Promise<void> {
     store.currentTask = undefined;
   }
   await wait(1000);
-  await runTaskForever();
+  // await runTaskForever();
 }
