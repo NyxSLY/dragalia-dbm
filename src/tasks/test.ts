@@ -1,21 +1,27 @@
 import { index } from "@/assets/timeline";
-import { wait } from "@/utils/wait";
+import { ITimeline } from "@/assets/timeline/type";
 
+// export function test(): void {
+//   setTimeout(() => {
+//     toastLog(timeline.a.name);
+//   }, timeline.a.time * 1000);
+//   setTimeout(() => {
+//     toastLog(`skill: ${timeline.b.name}`);
+//   }, timeline.b.time * 1000);
+//   console.log(`---start---`);
+// }
 
-export function test(): void{
-  main()
+const adjust_time = 3000
+
+export function test(): void {
+  for (const noUse of Object.keys(index)) {
+    const skill: ITimeline = index[noUse];
+    setTimeout(() => {
+      toastLog(`skill: ${skill.name}`);
+    }, skill.time * 1000 - adjust_time);
+  }
+  toastLog(`---start---`);
 }
-
-export function main(): void {
-
-  setTimeout(function(){toastLog(index.claw.name)}, index.claw.time*1000)
-  setTimeout(function(){toastLog(index.fart.name)}, index.fart.time*1000)
-  console.log('111')
-  //await wait(999e3)
-  //toastLog(index.claw.name);
-  //toastLog(index.whirl.name);
-}
-
 
 
 // export function test(): void {
