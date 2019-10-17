@@ -1,10 +1,10 @@
 var window = floaty.window(
     <vertical padding="16">
-        <text id="text" textSize="18sp" textColor="#000000"/>
+        <text id="text" textSize="18sp" textColor="#000000" text='${str}' />
 
         <horizontal gravity="center" marginTop="24">
         <text id="progress_value" textColor="black" textSize="18sp" margin="8" text="0"/>
-        <progressbar progress="30" style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"/>
+        <progressbar  id="progress" w="*" style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"/>
         </horizontal>
 
     </vertical>
@@ -51,7 +51,8 @@ setInterval(()=>{
         }
         go();
         window.text.setText(str)
-        window.progress_value.setText(current_sec.toString())
+        window.progress_value.setText((current_sec+1).toString())
+        window.progress.setProgress(current_sec+1)
     })
 }, 1000)
 
