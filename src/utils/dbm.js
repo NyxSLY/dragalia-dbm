@@ -21,11 +21,16 @@ export function dbm(timeline) {
   });
   window.exitOnClose();
   // auto start mode
-  // if (autoStart()) {
-  //   java.lang.Thread.sleep(3500);
-  //   timerId = start();
-  //   window.start.setText("RESET");
-  // }
+  function lazyStart() {
+    if (autoStart()) {
+      java.lang.Thread.sleep(3500);
+      timerId = start();
+      window.start.setText("RESET");
+      return timeId;
+    }
+  }
+
+  timeId = lazyStart();
 
   window.start.on("click", () => {
     if (window.start.getText() == "开始") {
