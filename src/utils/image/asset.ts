@@ -1,6 +1,5 @@
-import { assets } from "@/assets/images";
+import { assets, img } from "@/assets/images";
 import lodashSortby from "lodash.sortby";
-import { img } from "@/assets/images";
 
 export function loadAssets(name: string): void {
   toastLog(`Load assets: ${name}`);

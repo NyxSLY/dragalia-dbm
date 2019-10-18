@@ -1,4 +1,4 @@
-import { dbm } from "@/tasks/dbm";
+import { HZhenFeng } from "@/tasks/HZhenFeng";
 
 export const taskRegistry: Record<
   string,
@@ -6,5 +6,5 @@ export const taskRegistry: Record<
 > = {};
 
 export function setupTaskRegistry(): void {
-  taskRegistry.高级真风 = dbm;
+  taskRegistry.高级真风 = HZhenFeng;
 }

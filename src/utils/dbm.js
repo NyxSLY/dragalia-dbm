@@ -1,29 +1,35 @@
-import { timeline } from "@/assets/timeline/";
+//import { assets, timeline } from "@/assets/timeline/";
 import layout from "@/tasks/layout.xml";
 
-export function dbm() {
+// Object.assign(timeline), assets[];
+export function dbm(timeline) {
   const fromMin = 4;
   const fromSec = 59;
   let current_min = fromMin;
   let current_sec = fromSec;
   let str = util.format("剩余时间: %d:%d\n", 5, "00");
-  var timerId;
+  let timerId;
   var window = floaty.window(layout);
   // position and size
-  window.setSize(550, -2);
+  window.setSize(450, -2);
   window.setPosition(device.width - 450, device.height * 0.3);
   var numOfSkills = Object.keys(timeline).length;
   var bossBusy = false;
-  var refreshTime = 500;
+  var refreshTime = 1000;
   ui.run(function() {
     window.text.setText(str);
   });
   window.exitOnClose();
+  // auto start mode
+  // if (autoStart()) {
+  //   java.lang.Thread.sleep(3500);
+  //   timerId = start();
+  //   window.start.setText("RESET");
+  // }
 
   window.start.on("click", () => {
-    toast("傻瓜! ");
-    console.log();
     if (window.start.getText() == "开始") {
+      toast("傻瓜! ");
       window.start.setText("RESET");
       timerId = start();
       // toastLog(timeline[Object.keys(timeline)[0]].name);
@@ -60,7 +66,7 @@ export function dbm() {
     let i = 0;
     let skill1 = timeline[Object.keys(timeline)[i]];
     let skill2 = timeline[Object.keys(timeline)[i + 1]];
-    let break_left = timeline.break.castTime;
+    let break_left = timeline.break.castTime - 1;
     let delayCauseByBreak = 0;
     let time_left =
       current_sec -
@@ -153,7 +159,7 @@ export function dbm() {
             current_sec -= refreshTime / 1000;
           } else {
             current_min -= 1;
-            current_sec = current_sec + 60 - refreshTime / 1000;
+            current_sec = 60 - (refreshTime / 1000) * 2;
           }
           // 更新技能剩余时间
           if (!bossBusy) {
@@ -184,35 +190,59 @@ export function dbm() {
   }
 }
 
-// export function test(): void {
-//   const fro: number = 1;
-//   const to: number = 10;
-//   let current: number = fro;
-//   let timerId: number;
-
-//   function go(): void {
-//     console.log(current.toString());
-//     if (current === to) {
-//       clearInterval(timerId);
-//     }
-//     current += 1;
-//   }
-
-//   go();
-//   timerId = setInterval(go, 1000);
-// }
-
-// var window = floaty.window(
-//     <vertical padding="16">
-//         <text id="text" textSize="18sp" textColor="#000000" text='${str}' />
-
-//         <horizontal gravity="center" marginTop="24">
-//         <text id="progress_value" textColor="black" textSize="18sp" margin="8" text="0"/>
-//         <progressbar  id="progress" w="*" style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"/>
-//         </horizontal>
-
-//         <text textSize="18sp" textColor="#000000" text=index.a.skill />
-
-//     </vertical>
-
-// );
+function autoStart() {
+  toastLog("自动开始模式");
+  let start = false;
+  images.requestScreenCapture(false);
+  while (true) {
+    let img = images.captureScreen();
+    // sleep(100);
+    if (
+      images.detectsColor(
+        img,
+        "#000000",
+        device.width / 5,
+        device.height / 5,
+        5,
+        "equal"
+      ) &&
+      images.detectsColor(
+        img,
+        "#000000",
+        (device.width / 5) * 2,
+        (device.height / 5) * 2,
+        5,
+        "equal"
+      ) &&
+      images.detectsColor(
+        img,
+        "#000000",
+        (device.width / 5) * 3,
+        (device.height / 5) * 3,
+        5,
+        "equal"
+      ) &&
+      images.detectsColor(
+        img,
+        "#000000",
+        (device.width / 5) * 4,
+        (device.height / 5) * 4,
+        5,
+        "equal"
+      ) &&
+      images.detectsColor(
+        img,
+        "#000000",
+        (device.width / 5) * 4.5,
+        (device.height / 5) * 4.5,
+        5,
+        "equal"
+      )
+    ) {
+      toastLog("Going to start in 5s");
+      break;
+    }
+    start = true;
+    return start;
+  }
+}

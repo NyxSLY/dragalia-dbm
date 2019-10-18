@@ -1,6 +1,6 @@
 {
   "name": "dragalia-dbm",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "private": true,
   "main": "src/main.ts",
   "repository": "https://github.com/NyxSLY/dragalia-dbm.git",
