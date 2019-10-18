@@ -8,7 +8,6 @@ export function dbm(timeline) {
   let current_min = fromMin;
   let current_sec = fromSec;
   let str = util.format("剩余时间: %d:%d\n", 5, "00");
-  let timerId;
   var window = floaty.window(layout);
   // position and size
   window.setSize(450, -2);
@@ -16,21 +15,17 @@ export function dbm(timeline) {
   var numOfSkills = Object.keys(timeline).length;
   var bossBusy = false;
   var refreshTime = 1000;
+  var timerId;
   ui.run(function() {
     window.text.setText(str);
   });
   window.exitOnClose();
   // auto start mode
-  function lazyStart() {
-    if (autoStart()) {
-      java.lang.Thread.sleep(3500);
-      timerId = start();
-      window.start.setText("RESET");
-      return timeId;
-    }
-  }
-
-  timeId = lazyStart();
+  // if (autoStart()) {
+  //   toastLog("自动自动自动");
+  //   window.start.setText("RESET");
+  //   var timerID = start();
+  // }
 
   window.start.on("click", () => {
     if (window.start.getText() == "开始") {
@@ -82,7 +77,7 @@ export function dbm(timeline) {
       skill2.time.second +
       60 * (current_min - skill2.time.minute);
 
-    timerId = setInterval(() => {
+    var timerId = setInterval(() => {
       ui.run(function() {
         function go() {
           // 查看是否break
@@ -245,9 +240,8 @@ function autoStart() {
       )
     ) {
       toastLog("Going to start in 5s");
-      break;
+      start = true;
+      return start;
     }
-    start = true;
-    return start;
   }
 }
