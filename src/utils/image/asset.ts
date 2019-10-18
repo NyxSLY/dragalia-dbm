@@ -1,6 +1,6 @@
-import { assets } from '@/assets/images';
-import lodashSortby from 'lodash.sortby';
-import { img } from '@/assets/images';
+import { assets } from "@/assets/images";
+import lodashSortby from "lodash.sortby";
+import { img } from "@/assets/images";
 
 export function loadAssets(name: string): void {
   toastLog(`Load assets: ${name}`);
@@ -23,7 +23,7 @@ export function getAssetByResolution(
     .map(
       (i: RegExpMatchArray | null): IResolution => {
         if (!i) {
-          throw new Error('Unexpected');
+          throw new Error("Unexpected");
         }
 
         return {

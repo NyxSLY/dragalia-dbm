@@ -1,3 +1,0 @@
-<vertical padding="16">
-    <text id="text" textSize="18sp" textColor="#000000" text='${str}' />
-</vertical>
