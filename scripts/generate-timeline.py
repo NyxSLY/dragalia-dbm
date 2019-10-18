@@ -51,6 +51,11 @@ def translate_time(start_time, end_time):
     return min_dif*60 + sec_dif
 
 
+def translate1_time(time):
+    end_min, end_sec = [int(x) for x in time.split(':')[:2]]
+    return end_min, end_sec
+
+
 def main():
     for file in os.listdir(filepath):
         if file.split('.')[-1] == 'csv':

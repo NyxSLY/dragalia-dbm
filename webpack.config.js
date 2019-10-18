@@ -19,6 +19,11 @@ module.exports = {
       {
         test: /\.xml$/i,
         use: [{ loader: 'raw-loader' }]
+      },
+      {
+        test: /\.jsx$|\.es6$|\.js$/,
+        exclude: /node_modules/,
+        use: [{ loader: 'babel-loader' }]
       }
     ]
   },

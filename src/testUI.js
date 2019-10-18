@@ -1,17 +1,12 @@
+var index = require("./assets/timeline/index.ts");
+
 var window = floaty.window(
     <vertical padding="16">
         <text id="text" textSize="18sp" textColor="#000000" text='${str}' />
-
-        <horizontal gravity="center" marginTop="24">
-        <text id="progress_value" textColor="black" textSize="18sp" margin="8" text="0"/>
-        <progressbar  id="progress" w="*" style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"/>
-        </horizontal>
-
+        <button id='start' text="开始" bg="#77ffffff" />
     </vertical>
 
 );
-
-
 
 
 window.exitOnClose();
@@ -35,26 +30,30 @@ var current_sec = fromSec;
 var str = util.format("剩余时间: %d:%d\n", current_min, current_sec);
 var timerId = 0
 
-setInterval(()=>{
-    ui.run(function(){
-        function go() {
-            str = util.format("剩余时间: %d:%d\n", current_min, current_sec);
-            if (current_min == 0 & current_sec == 0){
-                clearInterval(timerID);
+export function dbm(){
+    setInterval(()=>{
+        ui.run(function(){
+            function go() {
+                str = util.format("剩余时间: %d:%d\n", current_min, current_sec);
+                //str += index.a.skill + ": " + util.format("%d:%d\n", index.a.time.minute, index.a.time.second);
+                if (current_min == 0 & current_sec == 0){
+                    clearInterval(timerID);
+                }
+                if(current_sec > 0){
+                    current_sec -= 1;
+                } else{
+                    current_min -= 1;
+                    current_sec = current_sec + 60 - 1;
+                }
             }
-            if(current_sec > 0){
-                current_sec -= 1;
-            } else{
-                current_min -= 1;
-                current_sec = current_sec + 60 - 1;
-            }
-        }
-        go();
-        window.text.setText(str)
-        window.progress_value.setText((current_sec+1).toString())
-        window.progress.setProgress(current_sec+1)
-    })
-}, 1000)
+            go();
+            window.text.setText(str)
+            //window.progress_value.setText((current_sec+1).toString())
+            //window.progress.setProgress(current_sec+1)
+        })
+    }, 1000)
+    
+}
 
 
 
@@ -75,3 +74,19 @@ setInterval(()=>{
 //   go();
 //   timerId = setInterval(go, 1000);
 // }
+
+
+// var window = floaty.window(
+//     <vertical padding="16">
+//         <text id="text" textSize="18sp" textColor="#000000" text='${str}' />
+
+//         <horizontal gravity="center" marginTop="24">
+//         <text id="progress_value" textColor="black" textSize="18sp" margin="8" text="0"/>
+//         <progressbar  id="progress" w="*" style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"/>
+//         </horizontal>
+
+//         <text textSize="18sp" textColor="#000000" text=index.a.skill />
+
+//     </vertical>
+
+// );

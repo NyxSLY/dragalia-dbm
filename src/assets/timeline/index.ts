@@ -2,7 +2,11 @@
 // Use `npm run code-generate:images` to update this file
 
 import { timeline_gaofeng } from "@/assets/timeline/timeline_gaofeng";
-import {ITimeline} from "@/assets/timeline/type";
+import { TimelineAssets } from "@/assets/timeline/type";
 
 
-export const index: Record<string, ITimeline> = timeline_gaofeng;
+export const assets: Record<string, Partial<TimelineAssets>> = {
+    'timeline_gaofeng': timeline_gaofeng
+}
+
+export const timeline: TimelineAssets = { ...(<TimelineAssets>timeline_gaofeng) };

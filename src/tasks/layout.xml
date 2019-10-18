@@ -1,0 +1,4 @@
+<vertical padding="16">
+    <text id="text" textSize="18sp" textColor="#000000" text='${str}' />
+    <button id='start' text="开始" bg="#77ffffff" />
+</vertical>
