@@ -1,0 +1,7 @@
+<vertical padding="16">
+    <text id="text" textSize="16sp" textColor="#000000" bg="#77ffffff" text='${str}\n' />
+    <linear gravity='center'>
+        <button id='break' text="BREAK" bg="#77ffffff" w="*" />
+    </linear>
+    
+</vertical>
