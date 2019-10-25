@@ -9,7 +9,7 @@ import { name, version } from 'package.json';
   console.log(`${name}: ${version}`);
 
   try {
-    launch('com.nintendo.zaga');
+    // launch('com.nintendo.zaga');
     device.keepScreenDim(99999);
 
     setupTaskRegistry();
