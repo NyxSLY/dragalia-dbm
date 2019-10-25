@@ -24,7 +24,7 @@ export function dbm() {
   //     window.start.click();
   //   })
   // }
-  window.setAdjustEnabled()
+  window.setAdjustEnabled(true);
   setInterval(() => { }, 1e3);
   return window;
 }

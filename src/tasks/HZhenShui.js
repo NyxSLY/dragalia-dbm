@@ -31,21 +31,15 @@ export function HZhenShui() {
         window.disableFocus();
     });
 
-    window.start.on("long_click", () => {
-        window.setAdjustEnabled(!window.isAdjustEnabled());
-    });
-
     window.break.on("click", () => {
         toast("BREAK!");
         clearInterval(timerId);
         const bk_time_length = 7;
         var adjust = (timeline_gaoshui_abk.a.time.minute - current_min) * 60 +
             timeline_gaoshui_abk.a.time.second - current_sec;
-        if (adjust < 0) {
-            adjust = 0
-        } else {
-            adjust = adjust + bk_time_length
-        }
+
+        adjust = adjust + bk_time_length
+
         console.log(adjust)
         timerId = start(window, timeline_gaoshui_abk, adjust);
     });
