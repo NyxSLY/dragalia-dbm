@@ -1,0 +1,43 @@
+import { ITimelineCastTime } from "@/assets/timeline/type";
+export const timeline_gaoshui_bbk: Record<string, ITimelineCastTime> = {};
+
+
+timeline_gaoshui_bbk.a = { name: "审判漩涡", time: {minute: 4, second: 56}, castTime: 3 };
+timeline_gaoshui_bbk.b = { name: "下砸", time: {minute: 4, second: 52}, castTime: 3 };
+timeline_gaoshui_bbk.c = { name: "前冲", time: {minute: 4, second: 49}, castTime: 3 };
+timeline_gaoshui_bbk.d = { name: "甩尾", time: {minute: 4, second: 45}, castTime: 3 };
+timeline_gaoshui_bbk.e = { name: "水弹(x2)", time: {minute: 4, second: 41}, castTime: 3 };
+timeline_gaoshui_bbk.f = { name: "水弹", time: {minute: 4, second: 37}, castTime: 3 };
+timeline_gaoshui_bbk.g = { name: "洗衣机", time: {minute: 4, second: 30}, castTime: 3 };
+timeline_gaoshui_bbk.h = { name: "救济之泡", time: {minute: 4, second: 22}, castTime: 3 };
+timeline_gaoshui_bbk.i = { name: "下砸", time: {minute: 4, second: 20}, castTime: 3 };
+timeline_gaoshui_bbk.j = { name: "前冲", time: {minute: 4, second: 18}, castTime: 3 };
+timeline_gaoshui_bbk.k = { name: "甩尾", time: {minute: 4, second: 13}, castTime: 3 };
+timeline_gaoshui_bbk.l = { name: "水弹(x2)", time: {minute: 4, second: 10}, castTime: 3 };
+timeline_gaoshui_bbk.m = { name: "水弹", time: {minute: 4, second: 5}, castTime: 3 };
+timeline_gaoshui_bbk.n = { name: "瀑布", time: {minute: 4, second: 1}, castTime: 3 };
+timeline_gaoshui_bbk.o = { name: "水之牢笼", time: {minute: 3, second: 53}, castTime: 3 };
+timeline_gaoshui_bbk.p = { name: "追踪水球", time: {minute: 3, second: 49}, castTime: 3 };
+timeline_gaoshui_bbk.q = { name: "下砸", time: {minute: 3, second: 44}, castTime: 3 };
+timeline_gaoshui_bbk.r = { name: "前冲", time: {minute: 3, second: 41}, castTime: 3 };
+timeline_gaoshui_bbk.s = { name: "甩尾", time: {minute: 3, second: 36}, castTime: 3 };
+timeline_gaoshui_bbk.t = { name: "水弹(x2)", time: {minute: 3, second: 32}, castTime: 3 };
+timeline_gaoshui_bbk.u = { name: "水弹", time: {minute: 3, second: 28}, castTime: 3 };
+timeline_gaoshui_bbk.v = { name: "洗衣机", time: {minute: 3, second: 22}, castTime: 3 };
+timeline_gaoshui_bbk.w = { name: "增殖水泡", time: {minute: 3, second: 11}, castTime: 3 };
+timeline_gaoshui_bbk.x = { name: "水弹(x3)", time: {minute: 3, second: 4}, castTime: 3 };
+timeline_gaoshui_bbk.y = { name: "水弹", time: {minute: 3, second: 1}, castTime: 3 };
+timeline_gaoshui_bbk.z = { name: "水弹", time: {minute: 2, second: 57}, castTime: 3 };
+timeline_gaoshui_bbk.aa = { name: "洗衣机", time: {minute: 2, second: 49}, castTime: 3 };
+timeline_gaoshui_bbk.ab = { name: "救济之泡", time: {minute: 2, second: 40}, castTime: 3 };
+timeline_gaoshui_bbk.ac = { name: "召唤伙伴", time: {minute: 2, second: 38}, castTime: 3 };
+timeline_gaoshui_bbk.ad = { name: "下砸", time: {minute: 2, second: 35}, castTime: 3 };
+timeline_gaoshui_bbk.ae = { name: "前冲", time: {minute: 2, second: 33}, castTime: 3 };
+timeline_gaoshui_bbk.af = { name: "甩尾", time: {minute: 2, second: 28}, castTime: 3 };
+timeline_gaoshui_bbk.ag = { name: "水弹(x2)", time: {minute: 2, second: 25}, castTime: 3 };
+timeline_gaoshui_bbk.ah = { name: "水弹", time: {minute: 2, second: 22}, castTime: 3 };
+timeline_gaoshui_bbk.ai = { name: "瀑布", time: {minute: 2, second: 17}, castTime: 3 };
+timeline_gaoshui_bbk.aj = { name: "增殖水泡", time: {minute: 2, second: 8}, castTime: 3 };
+timeline_gaoshui_bbk.break = { name: "BREAK", time: {minute: 0, second: 0}, castTime: 8 };
+
+Object.freeze(timeline_gaoshui_bbk);
