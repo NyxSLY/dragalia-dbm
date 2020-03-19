@@ -5,7 +5,7 @@ import { timeline_gaoshui_abk } from "@/assets/timeline/timeline_gaoshui_abk";
 import { autoStart } from "@/utils/autoStart"
 
 
-const fromMin = 0;
+const fromMin = 4;
 const fromSec = 59;
 var current_min = fromMin;
 var current_sec = fromSec;
